@@ -2,6 +2,12 @@
 
 Implementation of the s21_matrix_oop.h library.
 
+## Build
+
+__GTest__ library is used for full coverage of library functions code with unit-tests.  
+
+Makefile for building library and tests (with targets __all__, __clean__, __test__, __s21_matrix_oop.a__ and __gcov_report__).
+
 ## Matrix operations
 
 There is a brief description of the matrix operations below that implemented in the developing library.
@@ -41,9 +47,3 @@ And overloaded operators that partially correspond to the operations above:
 | `-=`  | Difference assignment (`SubMatrix`) | different matrix dimensions |
 | `*=`  | Multiplication assignment (`MulMatrix`/`MulNumber`) | the number of columns of the first matrix does not equal the number of rows of the second matrix |
 | `(int i, int j)`  | Indexation by matrix elements (row, column) | index is outside the matrix |
-
-## Build
-
-__GTest__ library is used for full coverage of library functions code with unit-tests.  
-
-Makefile for building library and tests (with targets __all__, __clean__, __test__, __s21_matrix_oop.a__ and __gcov_report__).
