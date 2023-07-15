@@ -1,5 +1,5 @@
-#ifndef SRC_MATRIX_H_
-#define SRC_MATRIX_H_
+#ifndef SRC_MATRIX_OOP_H_
+#define SRC_MATRIX_OOP_H_
 
 #include <cmath>
 #include <iostream>
@@ -9,16 +9,9 @@
 #define kEpsilon 10e-7
 
 class S21Matrix {
- private:
-  int rows_, cols_;
-  double** matrix_;
-
  public:
   S21Matrix();
   S21Matrix(int rows, int cols);
-
-  double& operator()(int row, int col);
-  const double& operator()(int row, int col) const;
 
   S21Matrix(const S21Matrix& other);
   S21Matrix& operator=(const S21Matrix& other);
@@ -27,6 +20,9 @@ class S21Matrix {
   S21Matrix& operator=(S21Matrix&& other) noexcept;
 
   ~S21Matrix();
+
+  double& operator()(int row, int col);
+  const double& operator()(int row, int col) const;
 
   int GetRows() const noexcept;
   int GetCols() const noexcept;
@@ -60,7 +56,9 @@ class S21Matrix {
   S21Matrix InverseMatrix();
 
  private:
+  int rows_, cols_;
+  double** matrix_;
   void ResizeMatrix(int newRows, int newCols);
 };
 
-#endif  // SRC_MATRIX_H_
+#endif  // SRC_MATRIX_OOP_H_
